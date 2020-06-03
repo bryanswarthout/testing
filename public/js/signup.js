@@ -16,6 +16,7 @@ $(document).ready(function() {
       return;
     }
     // If we have an email and password, run the signUpUser function
+    // eslint-disable-next-line no-use-before-define
     signUpUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
@@ -28,10 +29,12 @@ $(document).ready(function() {
       email: email,
       password: password
     })
+      // eslint-disable-next-line no-unused-vars
       .then(function(data) {
         window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
+      // eslint-disable-next-line no-use-before-define
       .catch(handleLoginErr);
   }
 
